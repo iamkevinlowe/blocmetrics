@@ -15,7 +15,7 @@
 
       <div class="user-info pull-right nav-margin">
         <% if current_user %>
-          Hello <%= link_to (current_user.name || current_user.email), current_user %>!
+          Hello <%= link_to (current_user.name || current_user.email), registered_applications_path %>!
           <%= link_to edit_user_registration_path, class: 'btn btn-primary btn-sm' do %>
             <span class="glyphicon glyphicon-user"></span>
           <% end %>
@@ -45,6 +45,7 @@
         <%= flash[:alert] %>
       </div>
     <% end %>
+    <br>
 
     <%= yield %>
   </div>

@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-md-8">
+    <h4><%= @registered_application.name %></h4>
+    <small><%= @registered_application.url %></small>
+  </div>
+  <div class="col-md-4">
+    <%= link_to "Update", edit_registered_application_path, class: 'btn btn-warning' %>
+    <%= link_to "Remove", @registered_application, method: :delete, class: 'btn btn-danger', data: { confirm: "Removing #{@registered_application.name}. Are you sure?" } %>
+  </div>
+</div>
