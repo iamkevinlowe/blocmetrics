@@ -3,13 +3,10 @@
     <h2><%= @registered_application.name %></h2>
     <small><%= @registered_application.url %></small>
     <hr>
-    <% if @events.any? %>
+    <% if @registered_application.events.any? %>
       <h4>Events</h4>
-      <% @events.each do |event, events| %>
-        <p>
-          <%= event.capitalize %>&nbsp;<span class="badge"><%= events.count %></span>
-        </p>
-      <% end %>
+      <%= pie_chart @registered_application.events.group(:name).count %>
+      <%= line_chart @registered_application.events.group_by_day(:created_at).count %>
     <% end %>
   </div>
   <div class="col-md-4">
