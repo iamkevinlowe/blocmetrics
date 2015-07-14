@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-8">
+    <h2><%= @registered_application.name %></h2>
+    <small><%= @registered_application.url %></small>
+    <hr>
+    <% if @events.any? %>
+      <h4>Events</h4>
+      <% @events.each do |event, events| %>
+        <p>
+          <%= event.capitalize %>&nbsp;<span class="badge"><%= events.count %></span>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <%= link_to "Update", edit_registered_application_path, class: 'btn btn-warning' %>
+    <%= link_to "Remove", @registered_application, method: :delete, class: 'btn btn-danger', data: { confirm: "Removing #{@registered_application.name}. Are you sure?" } %>
+  </div>
+</div>
