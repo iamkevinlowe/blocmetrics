@@ -13,6 +13,3 @@ var blocmetrics = {
     _bm_request.send(JSON.stringify(_bm_event));
   }
 };
-
-// Add "//= require blocmetrics" in your application.js file
-// To create a metric, call "blocmetrics.report([Metric Name])"
