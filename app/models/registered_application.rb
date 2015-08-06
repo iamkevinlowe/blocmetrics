@@ -2,7 +2,7 @@ class RegisteredApplication < ActiveRecord::Base
   validates :url, uniqueness: true, presence: true
   
   belongs_to :user
-  has_many :events
+  has_many :events, dependent: :destroy
 
   before_validation :fix_url
 
