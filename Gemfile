@@ -42,13 +42,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development do
-  # gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller'
 end
 
 group :production do
-  # gem 'pg'
   gem 'rails_12factor'
 end
 
